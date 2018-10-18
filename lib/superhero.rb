@@ -30,14 +30,19 @@ class Superhero
   end
 
   def first_initial(letter = nil)
-    letter == nil ? @first_initial : @first_initial[letter.to_sym]
+    letter == nil ? @first_initial : @first_initial[letter.downcase.to_sym]
   end
 
   def last_initial(letter = nil)
-    letter == nil ? @last_initial : @last_initial[letter.to_sym]
+    letter == nil ? @last_initial : @last_initial[letter.downcase.to_sym]
   end
 
   def day(num = nil)
     num == nil ? @day : @day[num]
   end
+
+  def find_name(first, last, day)
+    return "#{first_initial(first[0])} #{last_initial(last[0])} #{day(day)}"
+  end
+
 end

@@ -1,9 +1,11 @@
 require 'sinatra/base'
+require './lib/superhero'
 
 class NameGenerator < Sinatra::Base
   enable :sessions
 
   get '/' do
+    $superhero = Superhero.new
     erb :index
   end
 

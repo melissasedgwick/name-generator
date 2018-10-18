@@ -38,4 +38,16 @@ describe Superhero do
 
   end
 
+  describe '#find_name' do
+
+    it 'Should return a superhero name' do
+      expect(subject.find_name('Melissa', 'Sedgwick', 13)).to eq('The Mysterious Crystal Unicorn')
+    end
+
+    it 'Should return a different superhero name' do
+      expect(subject.find_name('Kira', 'Way', 28)).to eq('The Hot Fiery Flame')
+    end
+
+  end
+
 end
