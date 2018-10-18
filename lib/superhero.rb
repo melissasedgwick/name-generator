@@ -11,6 +11,13 @@ class Superhero
     t: 'The Incredible', u: 'The Mysterious', v: 'The Untouchable',
     w: 'The Sensational', x: 'The Dazzling', y: 'The Wonderful', z: 'The Brainy'
     }
+
+    @last_initial = {a: 'Shrieking', b: 'Silver', c: 'Acidic', d: 'Gentle',
+    e: 'Red', f: 'Purple', g: 'Crystal', h: 'Metal', i: 'Pink', j: 'Shiny',
+    k: 'Titanium', l: 'Electric', m: 'Flying', n: 'Strong', o: 'Paper',
+    p: 'Wooden', q: 'Tiny', r: 'Huge', s: 'Stinky', t: 'Yellow', u: 'Diamond',
+    v: 'Orange', w: 'Fiery', x: 'Golden', y: 'Greasey', z: 'Masked'
+    }
   end
 
 end
