@@ -22,6 +22,7 @@ class NameGenerator < Sinatra::Base
     @last_name = session[:last_name]
     @day = ordinalize(session[:day].to_i)
     @month = session[:month]
+    @superhero_name = $superhero.find_name(@first_name, @last_name, @day.to_i)
     erb :generator
   end
 
