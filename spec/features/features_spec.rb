@@ -3,7 +3,21 @@ feature 'Enter names' do
     visit('/')
     fill_in :first_name, with: 'Melissa'
     fill_in :last_name, with: 'Sedgwick'
+    fill_in :day, with: '13'
+    fill_in :month, with: 'February'
     click_button 'Submit'
     expect(page).to have_content 'Name: Melissa Sedgwick'
+  end
+end
+
+feature 'Enter DOB' do
+  scenario 'Allows you to enter DOB' do
+    visit('/')
+    fill_in :first_name, with: 'Melissa'
+    fill_in :last_name, with: 'Sedgwick'
+    fill_in :day, with: '13'
+    fill_in :month, with: 'February'
+    click_button 'Submit'
+    expect(page).to have_content 'DOB: 13th February'
   end
 end
