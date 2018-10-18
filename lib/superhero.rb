@@ -1,14 +1,14 @@
 class Superhero
 
-  attr_reader :first_initial, :last_initial, :day
+  attr_reader
 
   def initialize
     @first_initial = {a: 'The Daring', b: 'The Brilliant', c: 'The Magical',
       d: 'The Fantastic', e: 'The Wonderful', f: 'The Mighty', g: 'The Dark',
       h: 'The Fearless', i: 'The Invicible', j: 'The Radioactive', k: 'The Hot',
-      l: 'The Crazy', m: 'The Unstoppable', n: 'The Frightening', o: 'The Mega',
+      l: 'The Crazy', m: 'The Mysterious', n: 'The Frightening', o: 'The Mega',
       p: 'The Galactic', q: 'The Impossible', r: 'The Howling', s: 'The Weird',
-      t: 'The Incredible', u: 'The Mysterious', v: 'The Untouchable',
+      t: 'The Incredible', u: 'The Unstoppable', v: 'The Untouchable',
       w: 'The Sensational', x: 'The Dazzling', y: 'The Cold', z: 'The Brainy'
     }
 
@@ -29,4 +29,15 @@ class Superhero
     }
   end
 
+  def first_initial(letter = nil)
+    letter == nil ? @first_initial : @first_initial[letter.to_sym]
+  end
+
+  def last_initial(letter = nil)
+    letter == nil ? @last_initial : @last_initial[letter.to_sym]
+  end
+
+  def day(num = nil)
+    num == nil ? @day : @day[num]
+  end
 end
