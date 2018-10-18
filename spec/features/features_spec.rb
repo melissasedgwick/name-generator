@@ -3,7 +3,7 @@ feature 'Enter names' do
     visit('/')
     fill_in :first_name, with: 'Melissa'
     fill_in :last_name, with: 'Sedgwick'
-    fill_in :day, with: '13'
+    page.select '13', from: 'day'
     page.select 'February', from: 'month'
     click_button 'Submit'
     expect(page).to have_content 'Name: Melissa Sedgwick'
@@ -15,7 +15,7 @@ feature 'Enter DOB' do
     visit('/')
     fill_in :first_name, with: 'Melissa'
     fill_in :last_name, with: 'Sedgwick'
-    fill_in :day, with: '13'
+    page.select '13', from: 'day'
     page.select 'February', from: 'month'
     click_button 'Submit'
     expect(page).to have_content 'DOB: 13th February'
@@ -27,7 +27,7 @@ feature 'Show Superhero name' do
     visit('/')
     fill_in :first_name, with: 'Melissa'
     fill_in :last_name, with: 'Sedgwick'
-    fill_in :day, with: '13'
+    page.select '13', from: 'day'
     page.select 'February', from: 'month'
     click_button 'Submit'
     expect(page).to have_content 'Superhero name: The Mysterious Crystal Unicorn'
