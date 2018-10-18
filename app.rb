@@ -18,9 +18,22 @@ class NameGenerator < Sinatra::Base
   get '/generator' do
     @first_name = session[:first_name]
     @last_name = session[:last_name]
-    @day = session[:day]
+    @day = ordinalize(session[:day].to_i)
     @month = session[:month]
     erb :generator
+  end
+
+  def ordinalize(num)
+    if (11..13).include?(num)
+      "#{num}th"
+    else
+      case num % 10
+        when 1; "#{num}st"
+        when 2; "#{num}nd"
+        when 3; "#{num}rd"
+        else    "#{num}th"
+      end
+    end
   end
 
 end
